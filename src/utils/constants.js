@@ -74,8 +74,8 @@ export const PROJECTS_DATA = [
     ],
     techStack: ["Python 3.11", "Flask", "AI Assistant Engine", "Live GPS Map", "AI Text Generator", "SMS Gateway", "Docker", "Firestore", "Flutter", "OpenCV Biometrics"],
     githubUrl: "https://github.com/princessazucena",
-    demoUrl: "#",
-    metrics: { aiEngine: "Report & Route AI", liveMap: "GPS Tracking", sms: "Live SMS Gateway", status: "Production Ready" }
+    demoUrl: "https://eb-b-ela-cruz-web-mobile.vercel.app/",
+    metrics: { aiEngine: "Report & Route AI", liveMap: "GPS Tracking", sms: "Live SMS Gateway", liveLink: "eb-b-ela-cruz-web-mobile.vercel.app", status: "Live & Deployed" }
   },
   {
     id: "sk-scholarship",
