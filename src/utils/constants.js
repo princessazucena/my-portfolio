@@ -29,19 +29,53 @@ export const PROJECTS_DATA = [
     category: "Full-Stack & Cloud",
     type: "Enterprise Capstone Platform",
     featured: true,
-    summary: "Comprehensive multi-role operations system with real-time dispatch, facial biometric verification, SMS automation, and Flutter mobile field synchronization.",
-    architecture: "Python (Flask), Docker, Firebase/Firestore, Flutter Mobile, AWS EC2 / Render, SMS Gateway API, OpenCV Face Match",
-    description: "An enterprise-grade operational management and electrical service platform designed for high-precision contractor dispatching, real-time client booking, automated priority queueing, and secure identity validation with facial biometrics.",
+    summary: "Enterprise electrical contracting & operations platform featuring an AI system assistant, live GPS electrician tracking, an applicant chatbot (Ebby), an AI text enhancer, real-time messaging, and automated SMS gateway notifications.",
+    architecture: "Python 3.11 (Flask), AI Query Engine & Report Generator, Leaflet/Mapbox Live Geolocation, Docker, Firebase/Firestore, Flutter Mobile, SMS Gateway API, OpenCV Biometrics",
+    description: "An enterprise-grade operational management and electrical service platform engineered for contractor dispatching, live field electrician GPS tracking, multi-role communication, and AI-powered automation. Features an intelligent AI Assistant that generates automated reports, redirects system page routes, and answers queries on system data; a Live Job Order Map for real-time dispatching; an Applicant Chatbot ('Ebby'); an AI Text Enhancer for formal input refinement; and an integrated in-app messaging & SMS gateway notification engine.",
     highlights: [
-      "Role-Based Access Control (RBAC) across Admin, Secretary, Electrician, and Customer portals.",
-      "Facial Recognition Verification engine for secure electrician and applicant identity audits.",
-      "Automated SMS gateway notifications for real-time service priority dispatch and job updates.",
-      "Containerized deployment architecture configured with Docker, Docker Compose, and AWS/Render scaling."
+      "AI Assistant & Report Generator: Autonomous AI agent that generates analytical reports, executes smart page route redirections, and answers complex queries regarding system data.",
+      "Live Job Order Map: Interactive real-time geospatial map tracking field electricians, service zones, and active job order dispatch statuses.",
+      "Applicant Chatbot ('Ebby'): Conversational AI assistant guiding clients and applicants through service requirements, estimates, and registration workflows.",
+      "AI Text Generator & Enhancer: AI-driven text refinement tool optimizing user input formatting, formalizing reasons, and structuring communication.",
+      "Messaging & SMS Gateway Engine: Dual-channel in-app direct messaging and automated SMS dispatch alerts for field technicians and clients.",
+      "Biometric Face Matching & RBAC: OpenCV facial recognition security safeguarding access across Admin, Secretary, Electrician, and Customer portals."
     ],
-    techStack: ["Python 3.11", "Flask", "Docker", "Firestore", "Flutter", "OpenCV Biometrics", "SMS Gateway", "Render / AWS"],
+    screenshots: [
+      {
+        id: "eb-landing",
+        title: "Contractor Portal & Service Showcase",
+        caption: "Landing interface displaying Meralco accreditation, instant service estimations, and contractor consultation booking.",
+        image: "/projects/eb-delacruz/eb-landing.png"
+      },
+      {
+        id: "eb-live-map",
+        title: "Live Job Order & Electrician Map",
+        caption: "Real-time geospatial tracking interface monitoring active field electricians and job order dispatches across Laguna service zones.",
+        image: "/projects/eb-delacruz/eb-live-map.png"
+      },
+      {
+        id: "eb-ai-enhancer",
+        title: "AI Text Enhancer & Formatter",
+        caption: "Intelligent text generator that enhances user input formatting, refines phrasing, and structures technical communication.",
+        image: "/projects/eb-delacruz/eb-ai-enhancer.png"
+      },
+      {
+        id: "eb-chatbot-ebby",
+        title: "Applicant Chatbot ('Ebby') & AI Assistant",
+        caption: "Interactive conversational AI agent handling applicant inquiries, answering system data questions, and redirecting page routes.",
+        image: "/projects/eb-delacruz/eb-chatbot-ebby.png"
+      },
+      {
+        id: "eb-service-history",
+        title: "Service Lifecycle & SMS Dispatch Log",
+        caption: "Applicant dashboard tracking job milestone progress steppers, real-time messaging, and automated SMS dispatch notifications.",
+        image: "/projects/eb-delacruz/eb-service-history.png"
+      }
+    ],
+    techStack: ["Python 3.11", "Flask", "AI Assistant Engine", "Live GPS Map", "AI Text Generator", "SMS Gateway", "Docker", "Firestore", "Flutter", "OpenCV Biometrics"],
     githubUrl: "https://github.com/princessazucena",
     demoUrl: "#",
-    metrics: { roles: 4, deploy: "Docker / Cloud", status: "Production Ready" }
+    metrics: { aiEngine: "Report & Route AI", liveMap: "GPS Tracking", sms: "Live SMS Gateway", status: "Production Ready" }
   },
   {
     id: "sk-scholarship",
@@ -313,8 +347,8 @@ Bio: Software engineer and IT specialist specializing in modern backend architec
      cloud deployments, security policies, and clean web systems.`,
 
   projects: `SYSTEMS ARCHIVE:
-  [1] E.B. Dela Cruz Operations System (Flask + Docker + Flutter + Biometrics)
-  [2] Sangguniang Kabataan Scholarship Portal (Flask + Supabase + Brevo)
+  [1] E.B. Dela Cruz Operations System (AI Assistant + Live GPS Map + Ebby Chatbot + AI Enhancer + SMS)
+  [2] Sangguniang Kabataan Scholarship Portal (Flask + Supabase + Auto Certificates + Admin Monitoring)
   [3] BSIT System Administration Portfolio (ITEP 414 Infrastructure)
   [4] Live Event Real-Time Tabulation & Scoring Engine
   [5] Byte Master Interactive UI Suite`,
@@ -322,9 +356,11 @@ Bio: Software engineer and IT specialist specializing in modern backend architec
   skills: `CORE TECH STACK:
   • Languages   : Python 3.11, JavaScript (ES6+), SQL, HTML5, CSS3, Dart/Flutter
   • Frameworks  : Flask, React 18, Vite, Tailwind CSS, Jinja2, Flutter
+  • AI & Maps   : AI Assistant Engine, Report Generation, Route Redirection, GPS Live Map
   • Databases   : Supabase (PostgreSQL), Firebase Firestore, SQL Migrations
   • Cloud & Ops : Docker, AWS EC2 / Elastic Beanstalk, Render, Vercel, Linux/Ubuntu
-  • Security    : RBAC, Signed Expiring URLs, IAM, Biometric Face Verification`,
+  • Security    : RBAC, Signed Expiring URLs, IAM, Biometric Face Verification
+  • Messaging   : Brevo Email API, Automated SMS Gateway`,
 
   education: `CREDENTIALS & AWS CERTIFICATIONS:
   • Degree : Bachelor of Science in Information Technology (BSIT)

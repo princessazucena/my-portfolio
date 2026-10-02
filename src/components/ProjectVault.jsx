@@ -7,7 +7,11 @@ import {
   faImages,
   faAward,
   faChartLine,
-  faFileSignature
+  faFileSignature,
+  faRobot,
+  faMapLocationDot,
+  faWandMagicSparkles,
+  faCommentSms
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { PROJECTS_DATA } from '../utils/constants';
@@ -20,11 +24,23 @@ import skStudentDash from '../assets/projects/sk/sk-student-dashboard.png';
 import skAdminDash from '../assets/projects/sk/sk-admin-dashboard.png';
 import skLogin from '../assets/projects/sk/sk-login.png';
 
+// EB Dela Cruz screenshots
+import ebLanding from '../assets/projects/eb-delacruz/eb-landing.png';
+import ebLiveMap from '../assets/projects/eb-delacruz/eb-live-map.png';
+import ebAiEnhancer from '../assets/projects/eb-delacruz/eb-ai-enhancer.png';
+import ebChatbotEbby from '../assets/projects/eb-delacruz/eb-chatbot-ebby.png';
+import ebServiceHistory from '../assets/projects/eb-delacruz/eb-service-history.png';
+
 const SCREENSHOT_MAP = {
   'sk-landing': skLanding,
   'sk-student-dashboard': skStudentDash,
   'sk-admin-dashboard': skAdminDash,
   'sk-login': skLogin,
+  'eb-landing': ebLanding,
+  'eb-live-map': ebLiveMap,
+  'eb-ai-enhancer': ebAiEnhancer,
+  'eb-chatbot-ebby': ebChatbotEbby,
+  'eb-service-history': ebServiceHistory,
 };
 
 export default function ProjectVault() {
@@ -138,6 +154,28 @@ export default function ProjectVault() {
                       <span className="text-[11px] font-sans px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-zinc-300 flex items-center gap-1.5">
                         <FontAwesomeIcon icon={faFileSignature} className="w-3 h-3 text-zinc-400" />
                         <span>Signed Attendance for Documentaries</span>
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Special Features for E.B. Dela Cruz */}
+                  {project.id === 'eb-delacruz' && (
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      <span className="text-[11px] font-sans px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center gap-1.5">
+                        <FontAwesomeIcon icon={faRobot} className="w-3 h-3" />
+                        <span>AI Assistant Engine</span>
+                      </span>
+                      <span className="text-[11px] font-sans px-2.5 py-1 rounded-md bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center gap-1.5">
+                        <FontAwesomeIcon icon={faMapLocationDot} className="w-3 h-3" />
+                        <span>Live GPS Electrician Map</span>
+                      </span>
+                      <span className="text-[11px] font-sans px-2.5 py-1 rounded-md bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center gap-1.5">
+                        <FontAwesomeIcon icon={faWandMagicSparkles} className="w-3 h-3" />
+                        <span>Ebby Chatbot & AI Formatter</span>
+                      </span>
+                      <span className="text-[11px] font-sans px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center gap-1.5">
+                        <FontAwesomeIcon icon={faCommentSms} className="w-3 h-3" />
+                        <span>Messaging & SMS Gateway</span>
                       </span>
                     </div>
                   )}

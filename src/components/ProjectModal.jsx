@@ -12,7 +12,13 @@ import {
   faFileSignature,
   faChartLine,
   faAward,
-  faArrowLeft
+  faArrowLeft,
+  faRobot,
+  faMapLocationDot,
+  faWandMagicSparkles,
+  faCommentSms,
+  faComments,
+  faRoute
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { soundFx } from '../utils/audio';
@@ -23,11 +29,23 @@ import skStudentDash from '../assets/projects/sk/sk-student-dashboard.png';
 import skAdminDash from '../assets/projects/sk/sk-admin-dashboard.png';
 import skLogin from '../assets/projects/sk/sk-login.png';
 
+// EB Dela Cruz screenshots
+import ebLanding from '../assets/projects/eb-delacruz/eb-landing.png';
+import ebLiveMap from '../assets/projects/eb-delacruz/eb-live-map.png';
+import ebAiEnhancer from '../assets/projects/eb-delacruz/eb-ai-enhancer.png';
+import ebChatbotEbby from '../assets/projects/eb-delacruz/eb-chatbot-ebby.png';
+import ebServiceHistory from '../assets/projects/eb-delacruz/eb-service-history.png';
+
 const SCREENSHOT_MAP = {
   'sk-landing': skLanding,
   'sk-student-dashboard': skStudentDash,
   'sk-admin-dashboard': skAdminDash,
   'sk-login': skLogin,
+  'eb-landing': ebLanding,
+  'eb-live-map': ebLiveMap,
+  'eb-ai-enhancer': ebAiEnhancer,
+  'eb-chatbot-ebby': ebChatbotEbby,
+  'eb-service-history': ebServiceHistory,
 };
 
 export default function ProjectModal({ project, onClose }) {
@@ -138,6 +156,51 @@ export default function ProjectModal({ project, onClose }) {
                   </div>
                   <p className="text-[11px] font-sans text-zinc-400 leading-relaxed">
                     Compiles official attendance sheets with digital signatures for government audit documentaries.
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* Special System Feature Callouts for E.B. Dela Cruz */}
+            {project.id === 'eb-delacruz' && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                <div className="p-3.5 rounded-xl bg-zinc-950 border border-zinc-800/90 space-y-1">
+                  <div className="flex items-center gap-2 text-xs font-sans font-medium text-emerald-400">
+                    <FontAwesomeIcon icon={faRobot} className="w-3.5 h-3.5" />
+                    <span>AI Assistant Engine</span>
+                  </div>
+                  <p className="text-[11px] font-sans text-zinc-400 leading-relaxed">
+                    Generates analytical reports, executes smart page redirections, and answers system data queries.
+                  </p>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-zinc-950 border border-zinc-800/90 space-y-1">
+                  <div className="flex items-center gap-2 text-xs font-sans font-medium text-blue-400">
+                    <FontAwesomeIcon icon={faMapLocationDot} className="w-3.5 h-3.5" />
+                    <span>Live Job Order Map</span>
+                  </div>
+                  <p className="text-[11px] font-sans text-zinc-400 leading-relaxed">
+                    Real-time geospatial GPS tracking of field electricians, service zones, and dispatch statuses.
+                  </p>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-zinc-950 border border-zinc-800/90 space-y-1">
+                  <div className="flex items-center gap-2 text-xs font-sans font-medium text-purple-400">
+                    <FontAwesomeIcon icon={faWandMagicSparkles} className="w-3.5 h-3.5" />
+                    <span>Ebby & AI Enhancer</span>
+                  </div>
+                  <p className="text-[11px] font-sans text-zinc-400 leading-relaxed">
+                    Applicant chatbot assistant and intelligent AI text generator to format and polish inputs.
+                  </p>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-zinc-950 border border-zinc-800/90 space-y-1">
+                  <div className="flex items-center gap-2 text-xs font-sans font-medium text-amber-400">
+                    <FontAwesomeIcon icon={faCommentSms} className="w-3.5 h-3.5" />
+                    <span>Messaging & SMS</span>
+                  </div>
+                  <p className="text-[11px] font-sans text-zinc-400 leading-relaxed">
+                    Direct in-app messaging and real-time SMS notifications for clients and field electricians.
                   </p>
                 </div>
               </div>
