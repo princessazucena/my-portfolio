@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUp, faCrown } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { PERSONAL_INFO } from '../utils/constants';
 import { soundFx } from '../utils/audio';
@@ -41,12 +41,12 @@ export default function Footer() {
         {/* Navigation & Socials */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-slate-400">
           <div className="flex flex-wrap items-center gap-4 text-slate-400">
-            <a href="#hero" className="hover:text-white transition-colors">Top</a>
-            <a href="#dossier" className="hover:text-white transition-colors">Dossier</a>
-            <a href="#projects" className="hover:text-white transition-colors">Systems</a>
-            <a href="#skills" className="hover:text-white transition-colors">Capabilities</a>
-            <a href="#credentials" className="hover:text-white transition-colors">Credentials</a>
-            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+            <a href="/" className="hover:text-white transition-colors">Overview</a>
+            <a href="/dossier" className="hover:text-white transition-colors">Dossier</a>
+            <a href="/systems" className="hover:text-white transition-colors">Systems</a>
+            <a href="/capabilities" className="hover:text-white transition-colors">Capabilities</a>
+            <a href="/credentials" className="hover:text-white transition-colors">Credentials</a>
+            <a href="/contact" className="hover:text-white transition-colors">Contact</a>
           </div>
 
           <div className="flex items-center gap-3">
@@ -69,9 +69,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-4 border-t border-slate-900/80 flex flex-col sm:flex-row items-center justify-between text-[11px] font-sans text-slate-500 gap-2 text-center sm:text-left">
+        <div className="pt-4 border-t border-slate-900/80 flex flex-col sm:flex-row items-center justify-between text-[10px] font-sans text-slate-500 gap-2 text-center sm:text-left">
           <p>© {new Date().getFullYear()} Princess Anne B. Azucena. All Rights Reserved.</p>
-          <p>Deployable on Vercel & Supabase Ready • Laguna, Philippines</p>
+          <p>Deployable on Vercel • Majayjay, Laguna, Philippines</p>
         </div>
 
       </div>

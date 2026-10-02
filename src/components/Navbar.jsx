@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
-  faCrown, 
   faVolumeHigh, 
   faVolumeXmark, 
   faBars, 
@@ -52,15 +51,6 @@ export default function Navbar({ onOpenSidebar, onOpenTerminal, soundEnabled, se
     );
   };
 
-  const navLinks = [
-    { label: 'Overview', to: '/' },
-    { label: 'Dossier', to: '/dossier' },
-    { label: 'Systems', to: '/systems' },
-    { label: 'Capabilities', to: '/capabilities' },
-    { label: 'Credentials', to: '/credentials' },
-    { label: 'Contact', to: '/contact' },
-  ];
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
@@ -71,51 +61,27 @@ export default function Navbar({ onOpenSidebar, onOpenTerminal, soundEnabled, se
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
-        {/* Brand */}
+        {/* Brand Name (No Crown Icon) */}
         <Link
           to="/"
           onClick={() => soundFx.playChime(659.25)}
-          className="group flex items-center gap-3"
+          className="group flex flex-col"
         >
-          <div className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-300 group-hover:border-slate-500 transition-colors">
-            <FontAwesomeIcon icon={faCrown} className="w-3.5 h-3.5" />
-          </div>
-          <div>
-            <span className="font-sans font-semibold text-sm sm:text-base text-white tracking-tight">
-              Princess Azucena
-            </span>
-            <p className="text-[11px] text-slate-400 font-sans">
-              Full-Stack & IT Specialist
-            </p>
-          </div>
+          <span className="font-sans font-semibold text-base sm:text-lg text-white tracking-tight group-hover:text-slate-200 transition-colors">
+            Princess Azucena
+          </span>
+          <span className="text-xs text-slate-400 font-sans">
+            Full-Stack & IT Specialist
+          </span>
         </Link>
 
-        {/* Center Multi-page Navigation */}
-        <nav className="hidden md:flex items-center gap-1 px-3 py-1.5 rounded-full bg-slate-900/90 border border-slate-800">
-          <div className="flex items-center gap-2 px-3 text-xs font-sans text-slate-400 border-r border-slate-800 mr-1">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-            <span>MNL {time || '12:00 PM'}</span>
-          </div>
+        {/* Center Live Time Clock */}
+        <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 text-xs font-sans text-slate-300 shadow-sm">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>MNL {time || '12:00 PM'}</span>
+        </div>
 
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              onClick={() => soundFx.playClick()}
-              className={({ isActive }) =>
-                `px-3.5 py-1 text-xs font-sans rounded-full transition-colors ${
-                  isActive
-                    ? 'bg-white text-slate-950 font-medium'
-                    : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
-                }`
-              }
-            >
-              {link.label}
-            </NavLink>
-          ))}
-        </nav>
-
-        {/* Right Tools & Sidebar Trigger */}
+        {/* Right Tools & Sidebar Menu Trigger */}
         <div className="flex items-center gap-2">
           
           {/* Sound Toggle */}
@@ -143,7 +109,7 @@ export default function Navbar({ onOpenSidebar, onOpenTerminal, soundEnabled, se
             <span>CLI</span>
           </button>
 
-          {/* LinkedIn Link */}
+          {/* LinkedIn */}
           <a
             href={PERSONAL_INFO.socials.linkedin}
             target="_blank"
@@ -155,17 +121,17 @@ export default function Navbar({ onOpenSidebar, onOpenTerminal, soundEnabled, se
             <span>LinkedIn</span>
           </a>
 
-          {/* Sidebar Toggle Button */}
+          {/* Menu Drawer Toggle Button */}
           <button
             onClick={() => {
               soundFx.playClick();
               onOpenSidebar();
             }}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-200 hover:text-white hover:bg-slate-800 transition-colors"
-            aria-label="Open sidebar navigation"
+            className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white text-slate-950 hover:bg-slate-200 transition-colors font-sans font-medium text-xs shadow-sm"
+            aria-label="Open navigation menu"
           >
             <FontAwesomeIcon icon={faBars} className="w-3.5 h-3.5" />
-            <span className="text-xs font-sans font-medium hidden sm:inline">Menu</span>
+            <span>Menu</span>
           </button>
 
         </div>
