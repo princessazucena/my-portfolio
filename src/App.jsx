@@ -33,12 +33,12 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="relative min-h-screen bg-[#06070a] text-slate-200 overflow-x-hidden font-sans flex flex-col justify-between">
+      <div className="relative min-h-screen bg-black text-zinc-200 overflow-x-hidden font-sans flex flex-col justify-between">
         
         {/* Interactive Cursor Follower */}
         <CustomCursor />
 
-        {/* Minimalist Celestial Particles Canvas */}
+        {/* Minimalist Particles Canvas */}
         <ParticleBackground />
 
         {/* Global Navigation Bar */}

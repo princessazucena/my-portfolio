@@ -42,7 +42,7 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Outer Glow Follower */}
+      {/* Outer Follower */}
       <div
         className="fixed pointer-events-none z-50 transition-transform duration-100 ease-out hidden md:block"
         style={{
@@ -53,8 +53,8 @@ export default function CustomCursor() {
       >
         <div className={`rounded-full transition-all duration-300 ${
           hovered 
-            ? 'w-12 h-12 bg-gold-500/15 border border-gold-400/60 blur-[1px]' 
-            : 'w-8 h-8 bg-gold-500/10 border border-gold-500/30'
+            ? 'w-10 h-10 bg-white/10 border border-white/40' 
+            : 'w-7 h-7 bg-white/5 border border-white/20'
         }`} />
       </div>
 
@@ -67,7 +67,7 @@ export default function CustomCursor() {
           transform: 'translate(-50%, -50%)',
         }}
       >
-        <div className="w-1.5 h-1.5 rounded-full bg-gold-300 shadow-gold-glow" />
+        <div className="w-1 h-1 rounded-full bg-white shadow-sm" />
       </div>
     </>
   );

@@ -55,7 +55,7 @@ export default function ParticleBackground() {
 
       // Draw subtle ambient glow
       const grad = ctx.createRadialGradient(width * 0.5, height * 0.4, 10, width * 0.5, height * 0.4, 500);
-      grad.addColorStop(0, 'rgba(30, 41, 59, 0.15)');
+      grad.addColorStop(0, 'rgba(255, 255, 255, 0.03)');
       grad.addColorStop(1, 'transparent');
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, width, height);

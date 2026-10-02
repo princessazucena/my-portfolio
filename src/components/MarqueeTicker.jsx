@@ -14,17 +14,17 @@ export default function MarqueeTicker() {
   ];
 
   return (
-    <div className="w-full py-4 border-y border-slate-800/80 bg-[#080a10]/80 backdrop-blur-md overflow-hidden relative select-none">
-      <div className="absolute top-0 left-0 bottom-0 w-20 bg-gradient-to-r from-[#06070a] to-transparent z-10 pointer-events-none" />
-      <div className="absolute top-0 right-0 bottom-0 w-20 bg-gradient-to-l from-[#06070a] to-transparent z-10 pointer-events-none" />
+    <div className="w-full py-4 border-y border-zinc-800 bg-black/90 backdrop-blur-md overflow-hidden relative select-none">
+      <div className="absolute top-0 left-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+      <div className="absolute top-0 right-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
       <div className="animate-marquee flex items-center whitespace-nowrap">
         {[...items, ...items].map((text, idx) => (
           <div key={idx} className="flex items-center gap-5 mx-3">
-            <span className="text-xs font-sans tracking-wider text-slate-400 font-medium uppercase hover:text-white transition-colors">
+            <span className="text-xs font-sans tracking-wider text-zinc-400 font-medium uppercase hover:text-white transition-colors">
               {text}
             </span>
-            <span className="text-slate-600 text-xs">✦</span>
+            <span className="text-zinc-600 text-xs">✦</span>
           </div>
         ))}
       </div>

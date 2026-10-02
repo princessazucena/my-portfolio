@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTerminal, faXmark, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import confetti from 'canvas-confetti';
 import { TERMINAL_COMMANDS, PERSONAL_INFO } from '../utils/constants';
 import { soundFx } from '../utils/audio';
 
@@ -88,20 +87,20 @@ export default function SovereignTerminal({ isOpen, onClose, triggerToast }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-sm animate-fade-in">
       <div 
-        className="relative w-full max-w-2xl rounded-2xl bg-[#090b10] border border-slate-700 overflow-hidden shadow-2xl flex flex-col h-[75vh]"
+        className="relative w-full max-w-2xl rounded-2xl bg-black border border-zinc-800 overflow-hidden shadow-2xl flex flex-col h-[75vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Terminal Header */}
-        <div className="flex items-center justify-between px-5 py-3.5 bg-slate-900/90 border-b border-slate-800">
+        <div className="flex items-center justify-between px-5 py-3.5 bg-zinc-950 border-b border-zinc-800">
           <div className="flex items-center gap-2.5">
             <div className="flex items-center gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-red-500/80 cursor-pointer" onClick={onClose}></span>
-              <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+              <span className="w-2.5 h-2.5 rounded-full bg-zinc-600"></span>
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
             </div>
             <div className="flex items-center gap-2 ml-2">
-              <FontAwesomeIcon icon={faTerminal} className="w-3.5 h-3.5 text-purple-400" />
-              <span className="text-xs font-sans font-medium text-slate-300">
+              <FontAwesomeIcon icon={faTerminal} className="w-3.5 h-3.5 text-zinc-400" />
+              <span className="text-xs font-sans font-medium text-zinc-300">
                 sovereign@azucena-system:~
               </span>
             </div>
@@ -109,20 +108,20 @@ export default function SovereignTerminal({ isOpen, onClose, triggerToast }) {
 
           <button
             onClick={onClose}
-            className="p-1 rounded text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            className="p-1 rounded text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
           >
             <FontAwesomeIcon icon={faXmark} className="w-3.5 h-3.5" />
           </button>
         </div>
 
         {/* Quick Chips */}
-        <div className="flex items-center gap-1.5 px-4 py-2 bg-slate-900/40 border-b border-slate-800 overflow-x-auto text-xs font-sans">
-          <span className="text-slate-500 shrink-0">Commands:</span>
+        <div className="flex items-center gap-1.5 px-4 py-2 bg-zinc-950/60 border-b border-zinc-800 overflow-x-auto text-xs font-sans">
+          <span className="text-zinc-500 shrink-0">Commands:</span>
           {chips.map((chip) => (
             <button
               key={chip}
               onClick={() => executeCommand(chip)}
-              className="px-2.5 py-0.5 rounded bg-slate-900 border border-slate-800 hover:border-slate-600 hover:text-white text-slate-400 transition-colors shrink-0"
+              className="px-2.5 py-0.5 rounded bg-zinc-900 border border-zinc-800 hover:border-zinc-600 hover:text-white text-zinc-400 transition-colors shrink-0"
             >
               {chip}
             </button>
@@ -136,11 +135,11 @@ export default function SovereignTerminal({ isOpen, onClose, triggerToast }) {
               {item.type === 'user' ? (
                 <span className="text-white font-medium">{item.text}</span>
               ) : item.type === 'system' ? (
-                <span className="text-slate-500">{item.text}</span>
+                <span className="text-zinc-500">{item.text}</span>
               ) : item.type === 'error' ? (
                 <span className="text-red-400">{item.text}</span>
               ) : (
-                <span className="text-slate-300">{item.text}</span>
+                <span className="text-zinc-300">{item.text}</span>
               )}
             </div>
           ))}
@@ -148,7 +147,7 @@ export default function SovereignTerminal({ isOpen, onClose, triggerToast }) {
         </div>
 
         {/* Input */}
-        <div className="p-3.5 bg-slate-900/90 border-t border-slate-800 flex items-center gap-2.5">
+        <div className="p-3.5 bg-zinc-950 border-t border-zinc-800 flex items-center gap-2.5">
           <span className="font-sans text-xs text-emerald-400 font-medium shrink-0">
             azucena:~$
           </span>
@@ -159,12 +158,12 @@ export default function SovereignTerminal({ isOpen, onClose, triggerToast }) {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="Type command here (e.g. projects, skills, contact)..."
-            className="flex-1 bg-transparent font-sans text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none"
+            className="flex-1 bg-transparent font-sans text-xs sm:text-sm text-white placeholder-zinc-600 focus:outline-none"
             autoFocus
           />
           <button
             onClick={() => executeCommand(input)}
-            className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
+            className="p-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-300 transition-colors"
           >
             <FontAwesomeIcon icon={faPaperPlane} className="w-3 h-3" />
           </button>

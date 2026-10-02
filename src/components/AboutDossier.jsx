@@ -7,7 +7,6 @@ import {
   faCompass, 
   faCircleCheck 
 } from '@fortawesome/free-solid-svg-icons';
-import { PERSONAL_INFO } from '../utils/constants';
 import { soundFx } from '../utils/audio';
 
 export default function AboutDossier() {
@@ -50,16 +49,16 @@ export default function AboutDossier() {
     <section id="dossier" className="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto relative">
       
       {/* Section Header */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-slate-800 mb-12">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-zinc-800 mb-12">
         <div>
-          <span className="text-xs font-sans text-slate-400 font-medium uppercase tracking-wider block mb-1">
+          <span className="text-xs font-sans text-zinc-400 font-medium uppercase tracking-wider block mb-1">
             01 // Profile
           </span>
           <h2 className="font-sans text-2xl sm:text-3xl font-semibold text-white tracking-tight">
             Engineering Background & Philosophy
           </h2>
         </div>
-        <p className="font-sans text-xs text-slate-400 max-w-sm text-left sm:text-right">
+        <p className="font-sans text-xs text-zinc-400 max-w-sm text-left sm:text-right">
           A disciplined pursuit of bulletproof infrastructure and clean human interfaces.
         </p>
       </div>
@@ -68,14 +67,14 @@ export default function AboutDossier() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
         
         {/* Left Bio Card (5 cols) */}
-        <div className="lg:col-span-5 p-6 rounded-2xl bg-[#0d0f17] border border-slate-800 space-y-4">
-          <span className="text-xs font-sans font-medium text-slate-400 uppercase tracking-wider block">
+        <div className="lg:col-span-5 p-6 rounded-2xl bg-[#09090b] border border-zinc-800 space-y-4">
+          <span className="text-xs font-sans font-medium text-zinc-400 uppercase tracking-wider block">
             Core Profile
           </span>
           <h3 className="font-sans text-xl font-medium text-white leading-snug">
             Bridging high-assurance backend systems with minimalist, refined interfaces.
           </h3>
-          <div className="pt-3 text-xs font-sans text-slate-300 space-y-1.5 border-t border-slate-800">
+          <div className="pt-3 text-xs font-sans text-zinc-300 space-y-1.5 border-t border-zinc-800">
             <p className="flex items-center gap-2">
               <FontAwesomeIcon icon={faCircleCheck} className="text-emerald-400 w-3 h-3" />
               <span>Majayjay, Laguna, Philippines</span>
@@ -92,7 +91,7 @@ export default function AboutDossier() {
         </div>
 
         {/* Right Narrative Paragraphs (7 cols) */}
-        <div className="lg:col-span-7 space-y-4 text-slate-300 text-sm font-normal leading-relaxed">
+        <div className="lg:col-span-7 space-y-4 text-zinc-300 text-sm font-normal leading-relaxed">
           <p>
             I am an IT scholar and engineer committed to architecting dependable software systems. From real-time field operations to municipal grant platforms, my engineering discipline bridges heavy backend logic with seamless user interactions.
           </p>
@@ -112,33 +111,33 @@ export default function AboutDossier() {
           <div
             key={cap.num}
             onMouseEnter={() => soundFx.playClick()}
-            className="p-6 rounded-2xl bg-[#0d0f17] border border-slate-800/80 hover:border-slate-700 transition-colors flex flex-col justify-between group"
+            className="p-6 rounded-2xl bg-[#09090b] border border-zinc-800 hover:border-zinc-700 transition-colors flex flex-col justify-between group"
           >
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="font-sans text-xs font-medium text-slate-500">
+                <span className="font-sans text-xs font-medium text-zinc-500">
                   {cap.num} //
                 </span>
-                <span className="text-[10px] font-sans text-slate-400 uppercase px-2.5 py-0.5 rounded bg-slate-900 border border-slate-800">
+                <span className="text-[10px] font-sans text-zinc-400 uppercase px-2.5 py-0.5 rounded bg-zinc-900 border border-zinc-800">
                   {cap.subtitle}
                 </span>
               </div>
 
               <div className="flex items-center gap-2.5 mb-2">
-                <FontAwesomeIcon icon={cap.icon} className="w-4 h-4 text-slate-400" />
+                <FontAwesomeIcon icon={cap.icon} className="w-4 h-4 text-zinc-400" />
                 <h4 className="font-sans font-medium text-base sm:text-lg text-white">
                   {cap.title}
                 </h4>
               </div>
 
-              <p className="text-xs text-slate-400 font-normal leading-relaxed mb-4">
+              <p className="text-xs text-zinc-400 font-normal leading-relaxed mb-4">
                 {cap.desc}
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-800/80">
+            <div className="flex flex-wrap gap-1.5 pt-3 border-t border-zinc-800">
               {cap.tags.map((tag) => (
-                <span key={tag} className="text-[10px] font-sans px-2 py-0.5 rounded bg-slate-900 text-slate-400 border border-slate-800">
+                <span key={tag} className="text-[10px] font-sans px-2 py-0.5 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">
                   {tag}
                 </span>
               ))}
