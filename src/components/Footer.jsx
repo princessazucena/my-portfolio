@@ -39,55 +39,44 @@ export default function Footer() {
           </button>
         </div>
 
-        {/* Navigation & Socials */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans">
-          <div className="flex flex-wrap items-center gap-4">
-            <Link to="/" className="text-zinc-400 no-underline hover:text-white transition-colors">Overview</Link>
-            <Link to="/dossier" className="text-zinc-400 no-underline hover:text-white transition-colors">Dossier</Link>
-            <Link to="/systems" className="text-zinc-400 no-underline hover:text-white transition-colors">Systems</Link>
-            <Link to="/capabilities" className="text-zinc-400 no-underline hover:text-white transition-colors">Capabilities</Link>
-            <Link to="/credentials" className="text-zinc-400 no-underline hover:text-white transition-colors">Credentials</Link>
-            <Link to="/contact" className="text-zinc-400 no-underline hover:text-white transition-colors">Contact</Link>
-          </div>
-
-          <div className="flex items-center gap-2.5">
-            <a
-              href={PERSONAL_INFO.socials.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white transition-colors"
-              title="GitHub Profile"
-            >
-              <FontAwesomeIcon icon={faGithub} className="w-3.5 h-3.5" />
-            </a>
-            <a
-              href={PERSONAL_INFO.socials.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 transition-colors"
-              title="LinkedIn Profile"
-            >
-              <FontAwesomeIcon icon={faLinkedin} className="w-3.5 h-3.5" />
-            </a>
-            <a
-              href={PERSONAL_INFO.socials.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 transition-colors"
-              title="Facebook Profile"
-            >
-              <FontAwesomeIcon icon={faFacebook} className="w-3.5 h-3.5" />
-            </a>
-            <a
-              href={PERSONAL_INFO.socials.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 transition-colors"
-              title="Instagram Profile"
-            >
-              <FontAwesomeIcon icon={faInstagram} className="w-3.5 h-3.5" />
-            </a>
-          </div>
+        {/* Socials */}
+        <div className="flex items-center gap-2.5">
+          <a
+            href={PERSONAL_INFO.socials.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white transition-colors"
+            title="GitHub Profile"
+          >
+            <FontAwesomeIcon icon={faGithub} className="w-3.5 h-3.5" />
+          </a>
+          <a
+            href={PERSONAL_INFO.socials.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 transition-colors"
+            title="LinkedIn Profile"
+          >
+            <FontAwesomeIcon icon={faLinkedin} className="w-3.5 h-3.5" />
+          </a>
+          <a
+            href={PERSONAL_INFO.socials.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 transition-colors"
+            title="Facebook Profile"
+          >
+            <FontAwesomeIcon icon={faFacebook} className="w-3.5 h-3.5" />
+          </a>
+          <a
+            href={PERSONAL_INFO.socials.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 transition-colors"
+            title="Instagram Profile"
+          >
+            <FontAwesomeIcon icon={faInstagram} className="w-3.5 h-3.5" />
+          </a>
         </div>
 
         <div className="pt-4 border-t border-zinc-900/80 flex flex-col sm:flex-row items-center justify-between text-[10px] font-sans text-zinc-500 gap-2 text-center sm:text-left">
