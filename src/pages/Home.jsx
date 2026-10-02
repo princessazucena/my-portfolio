@@ -10,13 +10,28 @@ import {
   faLocationDot, 
   faArrowRight, 
   faCircleCheck,
-  faCode
+  faCode,
+  faAward,
+  faExpand
 } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { PERSONAL_INFO } from '../utils/constants';
+import { faGithub, faLinkedin, faAws } from '@fortawesome/free-brands-svg-icons';
+import { PERSONAL_INFO, CERTIFICATIONS_DATA } from '../utils/constants';
 import { soundFx } from '../utils/audio';
 import profileImg from '../assets/profile.jpg';
 import MarqueeTicker from '../components/MarqueeTicker';
+
+// Direct certificate asset imports
+import certCloudEssentials from '../assets/certificates/aws-cloud-essentials.png';
+import certGenAiQuest from '../assets/certificates/aws-genai-quest.png';
+import certMlAi from '../assets/certificates/aws-ml-ai.png';
+import certCloudQuest from '../assets/certificates/aws-cloud-quest.png';
+
+const CERT_IMAGES = {
+  'aws-cloud-essentials': certCloudEssentials,
+  'aws-genai-quest': certGenAiQuest,
+  'aws-ml-ai': certMlAi,
+  'aws-cloud-quest': certCloudQuest,
+};
 
 export default function Home({ onOpenTerminal, triggerToast }) {
   const copyEmail = () => {
@@ -65,6 +80,10 @@ export default function Home({ onOpenTerminal, triggerToast }) {
                 <FontAwesomeIcon icon={faShieldHalved} className="w-3 h-3 text-emerald-400" />
                 <span>BSIT • Systems Administration</span>
               </div>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800">
+                <FontAwesomeIcon icon={faAws} className="w-3 h-3 text-zinc-300" />
+                <span>AWS Certified (4x)</span>
+              </div>
             </div>
 
             {/* Quick Action Navigation Buttons */}
@@ -76,6 +95,15 @@ export default function Home({ onOpenTerminal, triggerToast }) {
               >
                 <FontAwesomeIcon icon={faLayerGroup} className="w-3.5 h-3.5" />
                 <span>Explore Systems</span>
+              </Link>
+
+              <Link
+                to="/credentials"
+                onClick={() => soundFx.playClick()}
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 text-xs sm:text-sm font-sans transition-colors"
+              >
+                <FontAwesomeIcon icon={faAward} className="w-3.5 h-3.5 text-zinc-400" />
+                <span>View Certificates</span>
               </Link>
 
               <button
@@ -189,6 +217,71 @@ export default function Home({ onOpenTerminal, triggerToast }) {
 
       {/* Marquee Ticker */}
       <MarqueeTicker />
+
+      {/* Featured AWS Certificates Showcase */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-zinc-800 mb-8">
+          <div>
+            <span className="text-xs font-sans text-zinc-400 font-medium uppercase tracking-wider block mb-1">
+              Verified Accreditations
+            </span>
+            <h2 className="font-sans text-xl sm:text-2xl font-semibold text-white tracking-tight flex items-center gap-2">
+              <FontAwesomeIcon icon={faAws} className="w-6 h-6 text-zinc-300" />
+              <span>AWS Certifications</span>
+            </h2>
+          </div>
+          <Link
+            to="/credentials"
+            onClick={() => soundFx.playClick()}
+            className="flex items-center gap-1.5 text-xs font-medium text-zinc-300 hover:text-white transition-colors"
+          >
+            <span>View All Credentials & Full Lightbox</span>
+            <FontAwesomeIcon icon={faArrowRight} className="w-3 h-3" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {CERTIFICATIONS_DATA.map((cert) => {
+            const imgSrc = CERT_IMAGES[cert.id] || cert.image;
+
+            return (
+              <Link
+                key={cert.id}
+                to="/credentials"
+                onClick={() => soundFx.playClick()}
+                className="group rounded-2xl bg-[#09090b] border border-zinc-800 hover:border-zinc-600 transition-all duration-300 overflow-hidden flex flex-col justify-between"
+              >
+                <div className="relative w-full aspect-[16/10] bg-zinc-950 p-2.5 flex items-center justify-center border-b border-zinc-800/80 overflow-hidden">
+                  <img
+                    src={imgSrc}
+                    alt={cert.title}
+                    className="w-full h-full object-contain rounded group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="px-2.5 py-1 rounded-md bg-white text-black font-medium text-[11px] flex items-center gap-1">
+                      <FontAwesomeIcon icon={faExpand} className="w-2.5 h-2.5" />
+                      <span>Inspect</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-4 space-y-2">
+                  <div className="flex items-center justify-between text-[11px] font-sans text-zinc-400">
+                    <span className="text-emerald-400 font-medium">● Verified</span>
+                    <span>{cert.completedDate}</span>
+                  </div>
+                  <h3 className="font-sans font-medium text-xs sm:text-sm text-white group-hover:text-zinc-200 line-clamp-2">
+                    {cert.title}
+                  </h3>
+                  <p className="text-[11px] text-zinc-500 font-sans line-clamp-1">
+                    {cert.issuer}
+                  </p>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
 
       {/* Quick Navigation Cards */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

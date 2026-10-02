@@ -219,6 +219,53 @@ export const CREDENTIALS_DATA = [
   }
 ];
 
+export const CERTIFICATIONS_DATA = [
+  {
+    id: "aws-cloud-essentials",
+    title: "AWS Cloud Practitioner Essentials",
+    issuer: "AWS Training & Certification",
+    completedDate: "May 03, 2026",
+    recipient: "Princess Anne B. Azucena",
+    signatory: "Michelle Vaz, Director, AWS Training & Certification",
+    image: "/certificates/aws-cloud-essentials.png",
+    skills: ["Cloud Architecture", "AWS Core Services", "Security & Compliance", "Billing & Pricing"],
+    category: "Cloud Computing"
+  },
+  {
+    id: "aws-genai-quest",
+    title: "AWS Cloud Quest: Generative AI Practitioner",
+    issuer: "AWS Training & Certification",
+    completedDate: "March 29, 2026",
+    recipient: "Princess Anne B. Azucena",
+    signatory: "Michelle Vaz, Director, AWS Training & Certification",
+    image: "/certificates/aws-genai-quest.png",
+    skills: ["Generative AI", "Foundation Models", "Amazon Bedrock", "Prompt Engineering"],
+    category: "Artificial Intelligence"
+  },
+  {
+    id: "aws-ml-ai",
+    title: "Fundamentals of Machine Learning and Artificial Intelligence",
+    issuer: "AWS Training & Certification",
+    completedDate: "May 03, 2026",
+    recipient: "Princess Anne B. Azucena",
+    signatory: "Michelle Vaz, Director, AWS Training & Certification",
+    image: "/certificates/aws-ml-ai.png",
+    skills: ["Machine Learning", "AI Pipelines", "Deep Learning", "Model Evaluation"],
+    category: "Machine Learning"
+  },
+  {
+    id: "aws-cloud-quest",
+    title: "AWS Cloud Quest: Cloud Practitioner",
+    issuer: "AWS Training & Certification",
+    completedDate: "March 19, 2026",
+    recipient: "Princess Anne B. Azucena",
+    signatory: "Michelle Vaz, Director, AWS Training & Certification",
+    image: "/certificates/aws-cloud-quest.png",
+    skills: ["Hands-On Cloud Labs", "VPC & Networking", "EC2 & Storage", "IAM Policies"],
+    category: "Cloud Infrastructure"
+  }
+];
+
 export const TERMINAL_COMMANDS = {
   help: `Available Commands:
   - about      : Summary of Princess Anne B. Azucena
@@ -249,10 +296,14 @@ Bio: Software engineer and IT specialist specializing in modern backend architec
   • Cloud & Ops : Docker, AWS EC2 / Elastic Beanstalk, Render, Vercel, Linux/Ubuntu
   • Security    : RBAC, Signed Expiring URLs, IAM, Biometric Face Verification`,
 
-  education: `CREDENTIALS & EDUCATION:
+  education: `CREDENTIALS & AWS CERTIFICATIONS:
   • Degree : Bachelor of Science in Information Technology (BSIT)
-  • Focus  : Software Engineering, Cloud Architecture, System Administration (ITEP 414)
-  • Origin : Laguna, Philippines`,
+  • Specialized : ITEP 414 System Administration & Maintenance Distinction
+  • AWS Certifications (4x Verified):
+    [1] AWS Cloud Practitioner Essentials (Completed May 03, 2026)
+    [2] AWS Cloud Quest: Generative AI Practitioner (Completed March 29, 2026)
+    [3] Fundamentals of Machine Learning and AI (Completed May 03, 2026)
+    [4] AWS Cloud Quest: Cloud Practitioner (Completed March 19, 2026)`,
 
   contact: `CONTACT CHANNELS:
   • Email    : ceaneazucena@gmail.com
