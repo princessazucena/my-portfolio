@@ -53,7 +53,7 @@ export default function Navbar({ onOpenSidebar, onOpenTerminal, soundEnabled, se
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 ${
         scrolled
           ? 'py-3 bg-black/95 backdrop-blur-xl border-b border-zinc-800 shadow-xl'
           : 'py-5 bg-transparent'

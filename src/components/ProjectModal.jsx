@@ -11,7 +11,8 @@ import {
   faExpand,
   faFileSignature,
   faChartLine,
-  faAward
+  faAward,
+  faArrowLeft
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { soundFx } from '../utils/audio';
@@ -55,38 +56,46 @@ export default function ProjectModal({ project, onClose }) {
     ? (SCREENSHOT_MAP[currentScreenshot.id] || currentScreenshot.image)
     : null;
 
+  const handleClose = () => {
+    soundFx.playClick();
+    onClose();
+  };
+
   return (
     <>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-sm animate-fade-in overflow-y-auto">
+      {/* Modal Backdrop & Scrollable Container (with ample top spacing below navbar) */}
+      <div 
+        className="fixed inset-0 z-[100] flex items-start justify-center p-3 pt-20 pb-12 sm:p-6 sm:pt-24 sm:pb-16 bg-black/90 backdrop-blur-md animate-fade-in overflow-y-auto"
+        onClick={handleClose}
+      >
         <div 
           className="relative w-full max-w-4xl my-auto rounded-2xl bg-black border border-zinc-700 shadow-2xl overflow-hidden"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="flex items-center justify-between px-6 py-4 border-b border-zinc-800 bg-zinc-950">
+          <div className="flex items-center justify-between px-5 sm:px-6 py-4 border-b border-zinc-800 bg-zinc-950">
             <div className="flex items-center gap-3">
               <span className="px-2.5 py-0.5 rounded text-[11px] font-sans uppercase font-medium bg-zinc-900 border border-zinc-800 text-zinc-300">
                 {project.type}
               </span>
-              <span className="text-xs font-sans text-zinc-400">
+              <span className="text-xs font-sans text-zinc-400 hidden sm:inline">
                 ID: <span className="text-zinc-200">{project.id}</span>
               </span>
             </div>
 
+            {/* Prominent, easy-to-click Close Button */}
             <button
-              onClick={() => {
-                soundFx.playClick();
-                onClose();
-              }}
-              className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
-              aria-label="Close modal"
+              onClick={handleClose}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-700 hover:border-zinc-500 hover:bg-zinc-800 text-xs font-medium font-sans text-zinc-200 hover:text-white transition-colors shadow-sm"
+              aria-label="Close modal and return to page"
             >
-              <FontAwesomeIcon icon={faXmark} className="w-4 h-4" />
+              <FontAwesomeIcon icon={faXmark} className="w-3.5 h-3.5" />
+              <span>Close (Esc)</span>
             </button>
           </div>
 
           {/* Body */}
-          <div className="p-6 sm:p-8 space-y-6 max-h-[75vh] overflow-y-auto">
+          <div className="p-5 sm:p-8 space-y-6 max-h-[70vh] overflow-y-auto">
             <div>
               <span className="text-xs font-sans text-zinc-400 uppercase tracking-wider block mb-1">
                 {project.category}
@@ -268,12 +277,19 @@ export default function ProjectModal({ project, onClose }) {
           </div>
 
           {/* Footer Actions */}
-          <div className="flex flex-wrap items-center justify-between gap-4 px-6 py-4 border-t border-zinc-800 bg-zinc-950">
+          <div className="flex flex-wrap items-center justify-between gap-4 px-5 sm:px-6 py-4 border-t border-zinc-800 bg-zinc-950">
             <div className="text-xs font-sans text-zinc-400">
               Live Domain: <span className="text-white font-medium">{project.metrics?.liveLink || project.metrics?.deploy || 'Operational'}</span>
             </div>
 
             <div className="flex items-center gap-2.5">
+              <button
+                onClick={handleClose}
+                className="px-3.5 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-xs font-sans text-zinc-300 hover:text-white transition-colors"
+              >
+                <span>Close Blueprint</span>
+              </button>
+
               {project.githubUrl && (
                 <a
                   href={project.githubUrl}
@@ -307,7 +323,7 @@ export default function ProjectModal({ project, onClose }) {
       {/* Lightbox Modal for Full Resolution Screenshot */}
       {lightboxOpen && currentScreenshot && (
         <div
-          className="fixed inset-0 z-[60] flex items-center justify-center p-3 sm:p-6 bg-black/95 backdrop-blur-md animate-fade-in"
+          className="fixed inset-0 z-[110] flex items-center justify-center p-3 pt-16 pb-10 sm:p-6 sm:pt-20 sm:pb-12 bg-black/95 backdrop-blur-md animate-fade-in"
           onClick={() => setLightboxOpen(false)}
         >
           <div
@@ -326,17 +342,18 @@ export default function ProjectModal({ project, onClose }) {
 
               <button
                 onClick={() => setLightboxOpen(false)}
-                className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-700 text-xs font-medium text-zinc-200 hover:text-white hover:bg-zinc-800 transition-colors"
               >
-                <FontAwesomeIcon icon={faXmark} className="w-4 h-4" />
+                <FontAwesomeIcon icon={faXmark} className="w-3.5 h-3.5" />
+                <span>Close</span>
               </button>
             </div>
 
-            <div className="p-2 sm:p-4 bg-black flex items-center justify-center overflow-auto max-h-[80vh]">
+            <div className="p-2 sm:p-4 bg-black flex items-center justify-center overflow-auto max-h-[75vh]">
               <img
                 src={currentImgSrc}
                 alt={currentScreenshot.title}
-                className="max-w-full max-h-[75vh] object-contain rounded-lg border border-zinc-800 shadow-2xl"
+                className="max-w-full max-h-[70vh] object-contain rounded-lg border border-zinc-800 shadow-2xl"
               />
             </div>
           </div>

@@ -166,7 +166,7 @@ export default function CertificatesGallery() {
       {/* Full-Screen Certificate Lightbox Modal */}
       {selectedCert && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/90 backdrop-blur-md animate-fade-in overflow-y-auto"
+          className="fixed inset-0 z-[100] flex items-start justify-center p-3 pt-20 pb-12 sm:p-6 sm:pt-24 sm:pb-16 bg-black/90 backdrop-blur-md animate-fade-in overflow-y-auto"
           onClick={() => setSelectedCert(null)}
         >
           <div
@@ -174,7 +174,7 @@ export default function CertificatesGallery() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between px-6 py-4 bg-zinc-950 border-b border-zinc-800">
+            <div className="flex items-center justify-between px-5 sm:px-6 py-4 bg-zinc-950 border-b border-zinc-800">
               <div className="flex items-center gap-3">
                 <FontAwesomeIcon icon={faAws} className="w-5 h-5 text-white" />
                 <div>
@@ -192,10 +192,11 @@ export default function CertificatesGallery() {
                   soundFx.playClick();
                   setSelectedCert(null);
                 }}
-                className="p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-700 hover:border-zinc-500 hover:bg-zinc-800 text-xs font-medium font-sans text-zinc-200 hover:text-white transition-colors shadow-sm"
                 aria-label="Close certificate viewer"
               >
-                <FontAwesomeIcon icon={faXmark} className="w-4 h-4" />
+                <FontAwesomeIcon icon={faXmark} className="w-3.5 h-3.5" />
+                <span>Close (Esc)</span>
               </button>
             </div>
 
