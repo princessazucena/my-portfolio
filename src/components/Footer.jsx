@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { PERSONAL_INFO } from '../utils/constants';
 import { soundFx } from '../utils/audio';
 
@@ -49,12 +49,13 @@ export default function Footer() {
             <a href="/contact" className="hover:text-white transition-colors">Contact</a>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
             <a
               href={PERSONAL_INFO.socials.github}
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white transition-colors"
+              title="GitHub Profile"
             >
               <FontAwesomeIcon icon={faGithub} className="w-3.5 h-3.5" />
             </a>
@@ -63,8 +64,27 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 transition-colors"
+              title="LinkedIn Profile"
             >
               <FontAwesomeIcon icon={faLinkedin} className="w-3.5 h-3.5" />
+            </a>
+            <a
+              href={PERSONAL_INFO.socials.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 transition-colors"
+              title="Facebook Profile"
+            >
+              <FontAwesomeIcon icon={faFacebook} className="w-3.5 h-3.5" />
+            </a>
+            <a
+              href={PERSONAL_INFO.socials.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 transition-colors"
+              title="Instagram Profile"
+            >
+              <FontAwesomeIcon icon={faInstagram} className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>

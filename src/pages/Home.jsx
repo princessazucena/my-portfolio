@@ -14,7 +14,7 @@ import {
   faAward,
   faExpand
 } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin, faAws } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faAws, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { PERSONAL_INFO, CERTIFICATIONS_DATA } from '../utils/constants';
 import { soundFx } from '../utils/audio';
 import profileImg from '../assets/profile.jpg';
@@ -154,6 +154,28 @@ export default function Home({ onOpenTerminal, triggerToast }) {
                 title="LinkedIn Profile"
               >
                 <FontAwesomeIcon icon={faLinkedin} className="w-4 h-4" />
+              </a>
+
+              <a
+                href={PERSONAL_INFO.socials.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => soundFx.playClick()}
+                className="p-2.5 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-400 hover:text-white transition-colors"
+                title="Facebook Profile"
+              >
+                <FontAwesomeIcon icon={faFacebook} className="w-4 h-4" />
+              </a>
+
+              <a
+                href={PERSONAL_INFO.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => soundFx.playClick()}
+                className="p-2.5 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-400 hover:text-white transition-colors"
+                title="Instagram Profile"
+              >
+                <FontAwesomeIcon icon={faInstagram} className="w-4 h-4" />
               </a>
             </div>
 

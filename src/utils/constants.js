@@ -15,6 +15,8 @@ export const PERSONAL_INFO = {
   socials: {
     github: "https://github.com/princessazucena",
     linkedin: "https://www.linkedin.com/in/azucena-princess-anne-b-30316a368",
+    facebook: "https://www.facebook.com/princessanne.balalaazucena/",
+    instagram: "https://www.instagram.com/shobeprncxx_/",
     email: "ceaneazucena@gmail.com",
   },
   credentialsBadge: "BSIT • Majayjay Laguna • System Admin & Full-Stack"
@@ -306,11 +308,15 @@ Bio: Software engineer and IT specialist specializing in modern backend architec
     [4] AWS Cloud Quest: Cloud Practitioner (Completed March 19, 2026)`,
 
   contact: `CONTACT CHANNELS:
-  • Email    : ceaneazucena@gmail.com
-  • LinkedIn : https://www.linkedin.com/in/azucena-princess-anne-b-30316a368
-  • GitHub   : https://github.com/princessazucena`,
+  • Email     : ceaneazucena@gmail.com
+  • LinkedIn  : https://www.linkedin.com/in/azucena-princess-anne-b-30316a368
+  • GitHub    : https://github.com/princessazucena
+  • Facebook  : https://www.facebook.com/princessanne.balalaazucena/
+  • Instagram : https://www.instagram.com/shobeprncxx_/`,
 
   socials: `SOCIAL & PROFESSIONAL PROFILES:
-  • GitHub   : https://github.com/princessazucena
-  • LinkedIn : https://www.linkedin.com/in/azucena-princess-anne-b-30316a368`
+  • GitHub    : https://github.com/princessazucena
+  • LinkedIn  : https://www.linkedin.com/in/azucena-princess-anne-b-30316a368
+  • Facebook  : https://www.facebook.com/princessanne.balalaazucena/
+  • Instagram : https://www.instagram.com/shobeprncxx_/`
 };

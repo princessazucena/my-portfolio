@@ -14,7 +14,7 @@ import {
   faXmark,
   faCopy
 } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { PERSONAL_INFO } from '../utils/constants';
 import { soundFx } from '../utils/audio';
 import profileImg from '../assets/profile.jpg';
@@ -194,24 +194,42 @@ export default function Sidebar({
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center gap-2">
+          <div className="grid grid-cols-2 gap-2">
             <a
               href={PERSONAL_INFO.socials.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white text-xs font-medium transition-colors"
+              className="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white text-xs font-medium transition-colors"
             >
-              <FontAwesomeIcon icon={faGithub} className="w-4 h-4" />
+              <FontAwesomeIcon icon={faGithub} className="w-3.5 h-3.5" />
               <span>GitHub</span>
             </a>
             <a
               href={PERSONAL_INFO.socials.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-zinc-600 text-xs font-medium transition-colors"
+              className="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-zinc-600 text-xs font-medium transition-colors"
             >
-              <FontAwesomeIcon icon={faLinkedin} className="w-4 h-4 text-zinc-400" />
+              <FontAwesomeIcon icon={faLinkedin} className="w-3.5 h-3.5 text-zinc-400" />
               <span>LinkedIn</span>
+            </a>
+            <a
+              href={PERSONAL_INFO.socials.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-zinc-600 text-xs font-medium transition-colors"
+            >
+              <FontAwesomeIcon icon={faFacebook} className="w-3.5 h-3.5 text-zinc-400" />
+              <span>Facebook</span>
+            </a>
+            <a
+              href={PERSONAL_INFO.socials.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-zinc-600 text-xs font-medium transition-colors"
+            >
+              <FontAwesomeIcon icon={faInstagram} className="w-3.5 h-3.5 text-zinc-400" />
+              <span>Instagram</span>
             </a>
           </div>
 

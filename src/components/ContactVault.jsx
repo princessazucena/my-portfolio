@@ -8,7 +8,7 @@ import {
   faCircleCheck,
   faSpinner
 } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { PERSONAL_INFO } from '../utils/constants';
 import { soundFx } from '../utils/audio';
 import { submitContactInquiry } from '../utils/supabaseClient';
@@ -210,6 +210,66 @@ export default function ContactVault({ triggerToast }) {
               className="font-sans text-xs text-zinc-300 hover:underline block truncate"
             >
               {PERSONAL_INFO.socials.github}
+            </a>
+          </div>
+
+          {/* Facebook Card */}
+          <div className="p-5 rounded-2xl bg-[#09090b] border border-zinc-800">
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300">
+                  <FontAwesomeIcon icon={faFacebook} className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-medium font-sans uppercase text-white">Facebook</h4>
+                  <p className="text-[11px] font-sans text-zinc-400">Social Network</p>
+                </div>
+              </div>
+              <button
+                onClick={() => copyToClipboard(PERSONAL_INFO.socials.facebook, 'Facebook URL')}
+                className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white transition-colors"
+                title="Copy Facebook URL"
+              >
+                <FontAwesomeIcon icon={faCopy} className="w-3 h-3" />
+              </button>
+            </div>
+            <a
+              href={PERSONAL_INFO.socials.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans text-xs text-zinc-300 hover:text-white hover:underline block truncate"
+            >
+              {PERSONAL_INFO.socials.facebook}
+            </a>
+          </div>
+
+          {/* Instagram Card */}
+          <div className="p-5 rounded-2xl bg-[#09090b] border border-zinc-800">
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300">
+                  <FontAwesomeIcon icon={faInstagram} className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-medium font-sans uppercase text-white">Instagram</h4>
+                  <p className="text-[11px] font-sans text-zinc-400">@shobeprncxx_</p>
+                </div>
+              </div>
+              <button
+                onClick={() => copyToClipboard(PERSONAL_INFO.socials.instagram, 'Instagram URL')}
+                className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white transition-colors"
+                title="Copy Instagram URL"
+              >
+                <FontAwesomeIcon icon={faCopy} className="w-3 h-3" />
+              </button>
+            </div>
+            <a
+              href={PERSONAL_INFO.socials.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans text-xs text-zinc-300 hover:text-white hover:underline block truncate"
+            >
+              {PERSONAL_INFO.socials.instagram}
             </a>
           </div>
 
