@@ -5,12 +5,12 @@ export const PERSONAL_INFO = {
   tagline: "Building scalable backend platforms, resilient cloud systems, and clean modern web interfaces.",
   location: "Majayjay, Laguna, Philippines",
   status: "Available for Projects & Full-Time Roles",
-  bio: "An IT scholar and software engineer with a strong foundation in modern system architectures and continuous technical mastery. Specializing in high-performance web systems, cloud infrastructure, enterprise operations, and clean human-centric interfaces.",
+  bio: "A 4th-year Bachelor of Science in Information Technology (BSIT) student at Laguna State Polytechnic University – Sta. Cruz Campus and software engineer with a strong foundation in modern system architectures and continuous technical mastery. Specializing in high-performance web systems, cloud infrastructure, enterprise operations, and clean human-centric interfaces.",
   stats: [
     { label: "Production Systems", value: "5+", sub: "Engineered & Deployed" },
     { label: "Core Technologies", value: "12+", sub: "Python, Flask, React, Cloud" },
+    { label: "Academic Standing", value: "4th Year BSIT", sub: "LSPU Sta. Cruz Campus" },
     { label: "System Reliability", value: "99.9%", sub: "Resilient & Tested" },
-    { label: "Degree & Major", value: "BSIT", sub: "Info Tech & SysAdmin" },
   ],
   socials: {
     github: "https://github.com/princessazucena",
@@ -19,7 +19,7 @@ export const PERSONAL_INFO = {
     instagram: "https://www.instagram.com/shobeprncxx_/",
     email: "ceaneazucena@gmail.com",
   },
-  credentialsBadge: "BSIT • Majayjay Laguna • System Admin & Full-Stack"
+  credentialsBadge: "4th Year BSIT • LSPU Sta. Cruz Campus • System Admin & Full-Stack"
 };
 
 export const PROJECTS_DATA = [
@@ -239,13 +239,13 @@ export const SKILLS_DATA = [
 export const CREDENTIALS_DATA = [
   {
     id: "degree",
-    title: "Bachelor of Science in Information Technology (BSIT)",
-    institution: "Higher Education Institution",
-    location: "Laguna, Philippines",
-    period: "2022 – Present",
-    type: "Academic Degree",
-    description: "Curriculum encompassing full-stack systems development, database management, network security, operating systems, and software engineering methodologies.",
-    badge: "BSIT Major",
+    title: "Bachelor of Science in Information Technology (BSIT) — 4th Year",
+    institution: "Laguna State Polytechnic University – Sta. Cruz Campus",
+    location: "Santa Cruz, Laguna, Philippines",
+    period: "2022 – Present (4th Year)",
+    type: "Academic Degree Program",
+    description: "Currently pursuing 4th-year BSIT degree at Laguna State Polytechnic University – Sta. Cruz Campus. Rigorous technical curriculum encompassing full-stack systems engineering, enterprise server administration (ITEP 414), cloud infrastructure, relational & NoSQL databases, and capstone software architecture.",
+    badge: "4th Year BSIT • LSPU",
     verified: true
   },
   {
@@ -342,8 +342,9 @@ export const TERMINAL_COMMANDS = {
   
   about: `PRINCESS ANNE B. AZUCENA
 Title: Full-Stack Engineer & IT Specialist
+Academic Standing: 4th Year BSIT Student, Laguna State Polytechnic University – Sta. Cruz Campus
 Location: Majayjay, Laguna, Philippines
-Bio: Software engineer and IT specialist specializing in modern backend architectures,
+Bio: 4th-year BSIT scholar and software engineer specializing in modern backend architectures,
      cloud deployments, security policies, and clean web systems.`,
 
   projects: `SYSTEMS ARCHIVE:
@@ -363,7 +364,8 @@ Bio: Software engineer and IT specialist specializing in modern backend architec
   • Messaging   : Brevo Email API, Automated SMS Gateway`,
 
   education: `CREDENTIALS & AWS CERTIFICATIONS:
-  • Degree : Bachelor of Science in Information Technology (BSIT)
+  • Degree      : Bachelor of Science in Information Technology (BSIT) — 4th Year
+  • University  : Laguna State Polytechnic University – Sta. Cruz Campus
   • Specialized : ITEP 414 System Administration & Maintenance Distinction
   • AWS Certifications (4x Verified):
     [1] AWS Cloud Practitioner Essentials (Completed May 03, 2026)

@@ -77,15 +77,19 @@ export default function AboutDossier() {
           <div className="pt-3 text-xs font-sans text-zinc-300 space-y-1.5 border-t border-zinc-800">
             <p className="flex items-center gap-2">
               <FontAwesomeIcon icon={faCircleCheck} className="text-emerald-400 w-3 h-3" />
+              <span>Laguna State Polytechnic University – Sta. Cruz Campus</span>
+            </p>
+            <p className="flex items-center gap-2">
+              <FontAwesomeIcon icon={faCircleCheck} className="text-emerald-400 w-3 h-3" />
+              <span>4th Year — Bachelor of Science in Information Technology (BSIT)</span>
+            </p>
+            <p className="flex items-center gap-2">
+              <FontAwesomeIcon icon={faCircleCheck} className="text-emerald-400 w-3 h-3" />
               <span>Majayjay, Laguna, Philippines</span>
             </p>
             <p className="flex items-center gap-2">
               <FontAwesomeIcon icon={faCircleCheck} className="text-emerald-400 w-3 h-3" />
-              <span>Bachelor of Science in Information Technology</span>
-            </p>
-            <p className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faCircleCheck} className="text-emerald-400 w-3 h-3" />
-              <span>Systems Administration & Web Systems</span>
+              <span>Systems Administration & Full-Stack Web Platforms</span>
             </p>
           </div>
         </div>
@@ -93,10 +97,10 @@ export default function AboutDossier() {
         {/* Right Narrative Paragraphs (7 cols) */}
         <div className="lg:col-span-7 space-y-4 text-zinc-300 text-sm font-normal leading-relaxed">
           <p>
-            I am an IT scholar and engineer committed to architecting dependable software systems. From real-time field operations to municipal grant platforms, my engineering discipline bridges heavy backend logic with seamless user interactions.
+            I am a 4th-year BSIT student and scholar at <strong className="text-white font-medium">Laguna State Polytechnic University (Sta. Cruz Campus)</strong> committed to architecting dependable software systems. From real-time field operations to municipal grant platforms, my engineering discipline bridges heavy backend logic with seamless user interactions.
           </p>
           <p>
-            My major capstone systems include the <strong className="text-white font-medium">E.B. Dela Cruz Operations & Dispatch System</strong> (with Docker, facial biometric verification, and SMS dispatch) and the <strong className="text-white font-medium">Sangguniang Kabataan Scholarship Portal</strong> (powered by Flask and Supabase PostgreSQL with auto-expiring signed URLs).
+            My major capstone systems include the <strong className="text-white font-medium">E.B. Dela Cruz Operations & Dispatch System</strong> (featuring AI route & report generation, live GPS electrician maps, Ebby chatbot, and SMS dispatch) and the <strong className="text-white font-medium">Sangguniang Kabataan Scholarship Portal</strong> (powered by Flask and Supabase PostgreSQL with auto-generated certificates and documentary attendance records).
           </p>
           <p>
             Whether administering enterprise servers under <strong className="text-white font-medium">ITEP 414</strong> or configuring cloud containers, I prioritize security, resilience, and maintainability.

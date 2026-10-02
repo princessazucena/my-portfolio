@@ -9,7 +9,7 @@ export default function MarqueeTicker() {
     'FACIAL BIOMETRICS ENGINE',
     'DOCKER & CLOUD RESILIENCE',
     'REACT & MODERN WEB SYSTEMS',
-    'BSIT SCHOLAR • LAGUNA PH',
+    '4TH YEAR BSIT • LSPU STA. CRUZ',
     '99.9% SYSTEM RELIABILITY'
   ];
 

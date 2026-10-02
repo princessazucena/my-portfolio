@@ -68,7 +68,7 @@ export default function Home({ onOpenTerminal, triggerToast }) {
             </div>
 
             <p className="text-sm sm:text-base text-zinc-300 max-w-xl font-normal leading-relaxed">
-              <strong className="text-white font-medium">{PERSONAL_INFO.name}</strong> — Specializing in scalable full-stack architectures, enterprise server administration, and reliable cloud deployments from Majayjay, Laguna, Philippines.
+              <strong className="text-white font-medium">{PERSONAL_INFO.name}</strong> — 4th-year BSIT scholar at <strong className="text-white font-medium">Laguna State Polytechnic University (Sta. Cruz Campus)</strong>, specializing in scalable full-stack architectures, enterprise server administration, and reliable cloud deployments.
             </p>
 
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 text-xs font-sans text-zinc-300 pt-1">
@@ -78,7 +78,7 @@ export default function Home({ onOpenTerminal, triggerToast }) {
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800">
                 <FontAwesomeIcon icon={faShieldHalved} className="w-3 h-3 text-emerald-400" />
-                <span>BSIT • Systems Administration</span>
+                <span>4th Year BSIT • LSPU Sta. Cruz</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800">
                 <FontAwesomeIcon icon={faAws} className="w-3 h-3 text-zinc-300" />
@@ -201,7 +201,7 @@ export default function Home({ onOpenTerminal, triggerToast }) {
                   <span className="text-white font-medium">Princess Azucena</span>
                   <span className="flex items-center gap-1 text-zinc-200 bg-black/80 px-2 py-0.5 rounded border border-zinc-700">
                     <FontAwesomeIcon icon={faCircleCheck} className="w-3 h-3 text-emerald-400" />
-                    <span>BSIT</span>
+                    <span>4th Year BSIT</span>
                   </span>
                 </div>
               </div>
