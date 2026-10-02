@@ -49,19 +49,47 @@ export const PROJECTS_DATA = [
     category: "Full-Stack & Cloud",
     type: "Civic Governance & Grant Platform",
     featured: true,
-    summary: "Production-ready youth scholarship application portal with automated document verification, secure RBAC, and Brevo Email API notification pipeline.",
-    architecture: "Flask 3.x, Supabase (PostgreSQL + Auth + Storage Buckets), Tailwind CSS, Brevo Email Engine, AWS Elastic Beanstalk",
-    description: "A civic digital governance system empowering students to apply for official community scholarship grants while providing administrative officers with cryptographic document audits, status transitions, and automatic email confirmations.",
+    summary: "Production digital civic platform built for Sangguniang Kabataan ng Bukal that automates youth scholarship applications, provides real-time administrative applicant monitoring, automatically generates certificates of eligibility, and exports official signed attendance sheets for government audit documentaries.",
+    architecture: "Flask 3.x, Supabase (PostgreSQL + Auth + Storage Buckets), Tailwind CSS, Brevo Email Engine, Certificate Generation Suite, Vercel & Render Cloud Infrastructure",
+    description: "An end-to-end civic digital governance portal engineered for Sangguniang Kabataan ng Bukal. The platform enables students to submit applications and track review milestones, equips administrative officers with a centralized monitoring dashboard with analytics, automatically generates verifiable certificates for qualifying scholars, and compiles official documentary attendance sheets complete with recipient signatures.",
     highlights: [
-      "Supabase PostgreSQL backend featuring fine-grained Row-Level Security (RLS) and encrypted blob storage.",
-      "30-minute auto-expiring signed URLs ensuring high privacy for sensitive student identification files.",
-      "Transactional email automated pipeline using Brevo API for instant status notifications.",
-      "Zero-downtime deployment setup configured for AWS Elastic Beanstalk and Render."
+      "Automated Certificate Generation: Instantly generates official certificates of scholarship eligibility and participation for qualifying students.",
+      "Administrative Monitoring Command Center: Real-time analytics tracking submitted, pending review, verified, and rejected applications across educational institutions and year levels.",
+      "Documentary Attendance & Digital Signatures: Generates official event and payout attendance rosters complete with recipient signatures for auditing and record compliance.",
+      "Student Self-Service Portal: Dedicated student dashboard for submission tracking, event schedules, and instant announcements.",
+      "Supabase PostgreSQL & Row-Level Security: Secure document storage with auto-expiring signed URLs ensuring strict student privacy.",
+      "Brevo Automated Email Notifications: Automatic transactional email alerts notifying scholars of status updates and registration windows."
     ],
-    techStack: ["Python", "Flask", "Supabase", "PostgreSQL", "Tailwind CSS", "Brevo API", "AWS Elastic Beanstalk"],
+    screenshots: [
+      {
+        id: "sk-landing",
+        title: "Public Landing Portal",
+        caption: "Hero section where youth students discover scholarship announcements and initiate online registration.",
+        image: "/projects/sk/sk-landing.png"
+      },
+      {
+        id: "sk-student-dashboard",
+        title: "Student Portal & Notifications",
+        caption: "Student command center for tracking application approval status, upcoming events, and official notifications.",
+        image: "/projects/sk/sk-student-dashboard.png"
+      },
+      {
+        id: "sk-admin-dashboard",
+        title: "Admin Monitoring & Analytics Suite",
+        caption: "Central administrative dashboard displaying daily submissions, status distributions, student rosters, and certificate generation.",
+        image: "/projects/sk/sk-admin-dashboard.png"
+      },
+      {
+        id: "sk-login",
+        title: "Secure Authentication Gateway",
+        caption: "Role-based authentication entry point safeguarding student privacy and administrator operations.",
+        image: "/projects/sk/sk-login.png"
+      }
+    ],
+    techStack: ["Python", "Flask", "Supabase", "PostgreSQL", "Tailwind CSS", "Certificate Generator", "Brevo API", "Vercel"],
     githubUrl: "https://github.com/princessazucena/Sangguniang_Kabatan_Site",
-    demoUrl: "https://github.com/princessazucena/Sangguniang_Kabatan_Site",
-    metrics: { uploadCap: "16 MB Encrypted", speed: "Instant Audit", status: "Deployed" }
+    demoUrl: "https://sangguniangkabatansite.vercel.app/",
+    metrics: { liveLink: "sangguniangkabatansite.vercel.app", certEngine: "Auto-Generated", monitoring: "Real-Time Admin", status: "Live & Deployed" }
   },
   {
     id: "bsit-sysadmin",
