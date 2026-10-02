@@ -6,7 +6,8 @@ import {
   faPaperPlane, 
   faLocationDot, 
   faCircleCheck,
-  faDatabase
+  faDatabase,
+  faSpinner
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { PERSONAL_INFO } from '../utils/constants';
@@ -21,6 +22,7 @@ export default function ContactVault({ triggerToast }) {
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const copyToClipboard = (text, label) => {
     navigator.clipboard.writeText(text);
@@ -35,35 +37,65 @@ export default function ContactVault({ triggerToast }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    soundFx.playSuccess();
+    soundFx.playClick();
 
-    // 1. Try to save inquiry directly to Supabase Database
+    let emailDispatched = false;
+
+    // 1. Dispatch directly via Brevo API (/api/contact)
     try {
-      const dbResult = await submitContactInquiry(formData);
-      if (dbResult.success) {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        emailDispatched = true;
+        soundFx.playSuccess();
+        setIsSuccess(true);
         triggerToast(
-          'Message Registered',
-          dbResult.mode === 'supabase' 
-            ? 'Inquiry recorded to Supabase database & drafting email.' 
-            : 'Drafting email transmission.',
+          'Message Delivered',
+          'Your message was sent directly to Princess Anne Azucena via Brevo.',
           'success'
         );
+        setFormData({ name: '', email: '', subject: '', message: '' });
       }
-    } catch (err) {
-      console.warn('Database logging note:', err);
+    } catch (apiErr) {
+      console.warn('API route not available (e.g. static dev preview):', apiErr);
     }
 
-    // 2. Open mailto with populated fields
-    const mailtoUrl = `mailto:${PERSONAL_INFO.socials.email}?subject=${encodeURIComponent(
-      formData.subject || `Inquiry from ${formData.name}`
-    )}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
+    // 2. Also record to Supabase database table if configured
+    try {
+      await submitContactInquiry(formData);
+    } catch (dbErr) {
+      console.warn('Supabase DB log:', dbErr);
+    }
 
-    setTimeout(() => {
-      window.location.href = mailtoUrl;
-      setIsSubmitting(false);
-    }, 400);
+    // 3. Fallback to mailto client only if serverless API was unavailable
+    if (!emailDispatched) {
+      soundFx.playSuccess();
+      triggerToast(
+        'Drafting Transmission',
+        'Opening your default email client with your message prepared.',
+        'success'
+      );
+
+      const mailtoUrl = `mailto:${PERSONAL_INFO.socials.email}?subject=${encodeURIComponent(
+        formData.subject || `Inquiry from ${formData.name}`
+      )}&body=${encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      )}`;
+
+      setTimeout(() => {
+        window.location.href = mailtoUrl;
+      }, 300);
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
@@ -80,7 +112,7 @@ export default function ContactVault({ triggerToast }) {
           </h2>
         </div>
         <p className="font-sans text-xs text-slate-400 max-w-sm text-left sm:text-right font-light">
-          Direct communication pipeline for engineering roles, consultations, and collaborations.
+          Messages sent here are delivered directly to <span className="text-white font-medium">{PERSONAL_INFO.socials.email}</span>.
         </p>
       </div>
 
@@ -98,7 +130,7 @@ export default function ContactVault({ triggerToast }) {
                 </div>
                 <div>
                   <h4 className="text-xs font-medium font-sans uppercase text-white">Direct Email</h4>
-                  <p className="text-[11px] font-sans text-slate-400">Primary inbox</p>
+                  <p className="text-[11px] font-sans text-slate-400">Powered by Brevo</p>
                 </div>
               </div>
               <button
@@ -183,25 +215,25 @@ export default function ContactVault({ triggerToast }) {
               <FontAwesomeIcon icon={faLocationDot} className="w-3.5 h-3.5 text-slate-400" />
               <span>{PERSONAL_INFO.location}</span>
             </div>
-            <span className="text-emerald-400 font-medium">● Available</span>
+            <span className="text-emerald-400 font-medium">● Brevo Active</span>
           </div>
 
         </div>
 
-        {/* Right Side: Direct Message Form with Supabase Integration */}
+        {/* Right Side: Message Form */}
         <div className="lg:col-span-7 p-6 sm:p-8 rounded-2xl bg-[#0d0f17] border border-slate-800">
           <div className="flex items-center justify-between mb-2">
             <h3 className="font-sans font-medium text-lg sm:text-xl text-white">
-              Send Message
+              Send Transmission
             </h3>
-            <span className="text-[11px] font-sans text-slate-400 flex items-center gap-1.5">
-              <FontAwesomeIcon icon={faDatabase} className="w-3 h-3 text-emerald-400" />
-              <span>Supabase Ready</span>
+            <span className="text-[11px] font-sans text-slate-400 flex items-center gap-1.5 bg-slate-900 px-2.5 py-1 rounded-md border border-slate-800">
+              <FontAwesomeIcon icon={faCircleCheck} className="w-3 h-3 text-emerald-400" />
+              <span>Brevo API Connected</span>
             </span>
           </div>
 
           <p className="text-xs font-sans text-slate-400 mb-6">
-            Inquiries are stored directly and sent to <span className="text-slate-200">{PERSONAL_INFO.socials.email}</span>.
+            Sends an instant notification to <span className="text-slate-200">{PERSONAL_INFO.socials.email}</span>.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-3.5">
@@ -215,7 +247,7 @@ export default function ContactVault({ triggerToast }) {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="e.g. Eleanor Vance"
+                  placeholder="e.g. John Smith"
                   className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 focus:border-slate-500 text-xs sm:text-sm text-slate-100 placeholder-slate-600 focus:outline-none transition-colors"
                 />
               </div>
@@ -229,7 +261,7 @@ export default function ContactVault({ triggerToast }) {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="e.g. eleanor@company.com"
+                  placeholder="e.g. john@example.com"
                   className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 focus:border-slate-500 text-xs sm:text-sm text-slate-100 placeholder-slate-600 focus:outline-none transition-colors"
                 />
               </div>
@@ -258,7 +290,7 @@ export default function ContactVault({ triggerToast }) {
                 required
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                placeholder="Describe project details or inquiries..."
+                placeholder="Describe your project, timeline, or inquiry..."
                 className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 focus:border-slate-500 text-xs sm:text-sm text-slate-100 placeholder-slate-600 focus:outline-none transition-colors resize-none"
               ></textarea>
             </div>
@@ -268,8 +300,17 @@ export default function ContactVault({ triggerToast }) {
               disabled={isSubmitting}
               className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-white text-slate-950 font-medium text-xs sm:text-sm hover:bg-slate-200 transition-colors disabled:opacity-70"
             >
-              <FontAwesomeIcon icon={faPaperPlane} className="w-3.5 h-3.5" />
-              <span>{isSubmitting ? 'Dispatching...' : 'Dispatch Message'}</span>
+              {isSubmitting ? (
+                <>
+                  <FontAwesomeIcon icon={faSpinner} className="w-3.5 h-3.5 animate-spin" />
+                  <span>Transmitting via Brevo...</span>
+                </>
+              ) : (
+                <>
+                  <FontAwesomeIcon icon={faPaperPlane} className="w-3.5 h-3.5" />
+                  <span>Send Message Directly</span>
+                </>
+              )}
             </button>
           </form>
         </div>
