@@ -19,6 +19,12 @@
     overflow-x: hidden;
   }
 
+  /* Reset browser default blue link color globally */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
   /* Custom Sleek Dark Scrollbar */
   ::-webkit-scrollbar {
     width: 5px;

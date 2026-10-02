@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -39,14 +40,14 @@ export default function Footer() {
         </div>
 
         {/* Navigation & Socials */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-zinc-400">
-          <div className="flex flex-wrap items-center gap-4 text-zinc-400">
-            <a href="/" className="hover:text-white transition-colors">Overview</a>
-            <a href="/dossier" className="hover:text-white transition-colors">Dossier</a>
-            <a href="/systems" className="hover:text-white transition-colors">Systems</a>
-            <a href="/capabilities" className="hover:text-white transition-colors">Capabilities</a>
-            <a href="/credentials" className="hover:text-white transition-colors">Credentials</a>
-            <a href="/contact" className="hover:text-white transition-colors">Contact</a>
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans">
+          <div className="flex flex-wrap items-center gap-4">
+            <Link to="/" className="text-zinc-400 no-underline hover:text-white transition-colors">Overview</Link>
+            <Link to="/dossier" className="text-zinc-400 no-underline hover:text-white transition-colors">Dossier</Link>
+            <Link to="/systems" className="text-zinc-400 no-underline hover:text-white transition-colors">Systems</Link>
+            <Link to="/capabilities" className="text-zinc-400 no-underline hover:text-white transition-colors">Capabilities</Link>
+            <Link to="/credentials" className="text-zinc-400 no-underline hover:text-white transition-colors">Credentials</Link>
+            <Link to="/contact" className="text-zinc-400 no-underline hover:text-white transition-colors">Contact</Link>
           </div>
 
           <div className="flex items-center gap-2.5">
