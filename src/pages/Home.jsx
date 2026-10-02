@@ -12,7 +12,8 @@ import {
   faCircleCheck,
   faCode,
   faAward,
-  faExpand
+  faExpand,
+  faBookOpen
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faAws, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { PERSONAL_INFO, CERTIFICATIONS_DATA } from '../utils/constants';
@@ -305,107 +306,30 @@ export default function Home({ onOpenTerminal, triggerToast }) {
         </div>
       </section>
 
-      {/* Quick Navigation Cards */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex items-center justify-between pb-4 border-b border-zinc-800 mb-6">
-          <h2 className="text-lg font-sans font-semibold text-white">
-            Explore Portfolio Sections
-          </h2>
-          <span className="text-xs text-zinc-500 font-sans">Direct Page Access</span>
-        </div>
+      {/* Scripture Section: Jeremiah 29:11 */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="relative p-8 sm:p-12 rounded-3xl bg-[#09090b] border border-zinc-800 text-center shadow-2xl overflow-hidden group hover:border-zinc-700 transition-all duration-300">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-[1px] bg-gradient-to-r from-transparent via-zinc-500 to-transparent"></div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <Link
-            to="/dossier"
-            onClick={() => soundFx.playClick()}
-            className="p-5 rounded-2xl bg-[#09090b] border border-zinc-800 hover:border-zinc-700 transition-colors flex flex-col justify-between group"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-3 text-zinc-400 group-hover:text-white">
-                <FontAwesomeIcon icon={faShieldHalved} className="w-4 h-4" />
-                <span className="text-xs font-sans text-zinc-500">01</span>
-              </div>
-              <h3 className="text-base font-sans font-medium text-white mb-1">
-                The Dossier
-              </h3>
-              <p className="text-xs text-zinc-400">
-                Philosophy, engineering background, and core pillars.
-              </p>
+          <div className="flex justify-center mb-4">
+            <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:border-zinc-700 transition-colors">
+              <FontAwesomeIcon icon={faBookOpen} className="w-4 h-4" />
             </div>
-            <div className="pt-4 flex items-center gap-1 text-xs font-medium text-zinc-300 group-hover:text-white">
-              <span>Read Dossier</span>
-              <FontAwesomeIcon icon={faArrowRight} className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-            </div>
-          </Link>
+          </div>
 
-          <Link
-            to="/systems"
-            onClick={() => soundFx.playClick()}
-            className="p-5 rounded-2xl bg-[#09090b] border border-zinc-800 hover:border-zinc-700 transition-colors flex flex-col justify-between group"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-3 text-zinc-400 group-hover:text-white">
-                <FontAwesomeIcon icon={faLayerGroup} className="w-4 h-4" />
-                <span className="text-xs font-sans text-zinc-500">02</span>
-              </div>
-              <h3 className="text-base font-sans font-medium text-white mb-1">
-                Systems Vault
-              </h3>
-              <p className="text-xs text-zinc-400">
-                All 5 production systems, capstone, and repositories.
-              </p>
-            </div>
-            <div className="pt-4 flex items-center gap-1 text-xs font-medium text-zinc-300 group-hover:text-white">
-              <span>View Systems</span>
-              <FontAwesomeIcon icon={faArrowRight} className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-            </div>
-          </Link>
+          <span className="inline-block px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[11px] font-sans font-medium uppercase tracking-widest text-zinc-400 mb-5">
+            Jeremiah 29:11
+          </span>
 
-          <Link
-            to="/capabilities"
-            onClick={() => soundFx.playClick()}
-            className="p-5 rounded-2xl bg-[#09090b] border border-zinc-800 hover:border-zinc-700 transition-colors flex flex-col justify-between group"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-3 text-zinc-400 group-hover:text-white">
-                <FontAwesomeIcon icon={faCode} className="w-4 h-4" />
-                <span className="text-xs font-sans text-zinc-500">03</span>
-              </div>
-              <h3 className="text-base font-sans font-medium text-white mb-1">
-                Capabilities
-              </h3>
-              <p className="text-xs text-zinc-400">
-                Backend, frontend, cloud, DevOps, and database radar.
-              </p>
-            </div>
-            <div className="pt-4 flex items-center gap-1 text-xs font-medium text-zinc-300 group-hover:text-white">
-              <span>Inspect Stack</span>
-              <FontAwesomeIcon icon={faArrowRight} className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-            </div>
-          </Link>
+          <blockquote className="text-base sm:text-xl md:text-2xl font-sans font-normal text-zinc-200 leading-relaxed max-w-2xl mx-auto tracking-normal">
+            “For I know the plans I have for you,” declares the LORD, “plans to prosper you and not to harm you, plans to give you hope and a future.”
+          </blockquote>
 
-          <Link
-            to="/contact"
-            onClick={() => soundFx.playClick()}
-            className="p-5 rounded-2xl bg-[#09090b] border border-zinc-800 hover:border-zinc-700 transition-colors flex flex-col justify-between group"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-3 text-zinc-400 group-hover:text-white">
-                <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4" />
-                <span className="text-xs font-sans text-zinc-500">04</span>
-              </div>
-              <h3 className="text-base font-sans font-medium text-white mb-1">
-                Direct Contact
-              </h3>
-              <p className="text-xs text-zinc-400">
-                Supabase database inquiry form and email dispatch.
-              </p>
-            </div>
-            <div className="pt-4 flex items-center gap-1 text-xs font-medium text-zinc-300 group-hover:text-white">
-              <span>Send Message</span>
-              <FontAwesomeIcon icon={faArrowRight} className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-            </div>
-          </Link>
+          <div className="flex items-center justify-center gap-3 pt-6 text-xs font-sans text-zinc-500 font-medium">
+            <span className="w-8 h-[1px] bg-zinc-800"></span>
+            <span className="tracking-wider uppercase text-[10px]">Holy Bible</span>
+            <span className="w-8 h-[1px] bg-zinc-800"></span>
+          </div>
         </div>
       </section>
 
