@@ -41,7 +41,7 @@ export default function ContactVault({ triggerToast }) {
 
     let emailDispatched = false;
 
-    // 1. Dispatch directly via Brevo API (/api/contact)
+    // 1. Dispatch directly via Brevo serverless endpoint (/api/contact)
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -51,21 +51,26 @@ export default function ContactVault({ triggerToast }) {
         body: JSON.stringify(formData),
       });
 
-      const result = await response.json();
+      const contentType = response.headers.get('content-type');
+      if (contentType && contentType.includes('application/json')) {
+        const result = await response.json();
 
-      if (response.ok && result.success) {
-        emailDispatched = true;
-        soundFx.playSuccess();
-        setIsSuccess(true);
-        triggerToast(
-          'Message Delivered',
-          'Your message was sent directly to Princess Anne Azucena via Brevo.',
-          'success'
-        );
-        setFormData({ name: '', email: '', subject: '', message: '' });
+        if (response.ok && result.success) {
+          emailDispatched = true;
+          soundFx.playSuccess();
+          setIsSuccess(true);
+          triggerToast(
+            'Transmission Delivered',
+            'Your message was sent directly to Princess Anne Azucena at ceaneazucena@gmail.com.',
+            'success'
+          );
+          setFormData({ name: '', email: '', subject: '', message: '' });
+        } else {
+          console.warn('API reported issue:', result.error);
+        }
       }
     } catch (apiErr) {
-      console.warn('API route not available (e.g. static dev preview):', apiErr);
+      console.warn('API endpoint connection:', apiErr);
     }
 
     // 2. Also record to Supabase database table if configured
@@ -79,9 +84,9 @@ export default function ContactVault({ triggerToast }) {
     if (!emailDispatched) {
       soundFx.playSuccess();
       triggerToast(
-        'Drafting Transmission',
-        'Opening your default email client with your message prepared.',
-        'success'
+        'Email Client Ready',
+        'Direct API queued. Opening your email app to ensure transmission.',
+        'info'
       );
 
       const mailtoUrl = `mailto:${PERSONAL_INFO.socials.email}?subject=${encodeURIComponent(
@@ -92,7 +97,7 @@ export default function ContactVault({ triggerToast }) {
 
       setTimeout(() => {
         window.location.href = mailtoUrl;
-      }, 300);
+      }, 500);
     }
 
     setIsSubmitting(false);
