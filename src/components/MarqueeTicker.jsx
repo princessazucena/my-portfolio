@@ -1,0 +1,33 @@
+import React from 'react';
+
+export default function MarqueeTicker() {
+  const items = [
+    'FULL-STACK ARCHITECTURE',
+    'SYSTEM ADMINISTRATION (ITEP 414)',
+    'PYTHON 3.11 & FLASK',
+    'SUPABASE POSTGRESQL & RLS',
+    'FACIAL BIOMETRICS ENGINE',
+    'DOCKER & CLOUD RESILIENCE',
+    'REACT & MODERN WEB SYSTEMS',
+    'BSIT SCHOLAR • LAGUNA PH',
+    '99.9% SYSTEM RELIABILITY'
+  ];
+
+  return (
+    <div className="w-full py-4 border-y border-slate-800/80 bg-[#080a10]/80 backdrop-blur-md overflow-hidden relative select-none">
+      <div className="absolute top-0 left-0 bottom-0 w-20 bg-gradient-to-r from-[#06070a] to-transparent z-10 pointer-events-none" />
+      <div className="absolute top-0 right-0 bottom-0 w-20 bg-gradient-to-l from-[#06070a] to-transparent z-10 pointer-events-none" />
+
+      <div className="animate-marquee flex items-center whitespace-nowrap">
+        {[...items, ...items].map((text, idx) => (
+          <div key={idx} className="flex items-center gap-5 mx-3">
+            <span className="text-xs font-sans tracking-wider text-slate-400 font-medium uppercase hover:text-white transition-colors">
+              {text}
+            </span>
+            <span className="text-slate-600 text-xs">✦</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
